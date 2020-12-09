@@ -136,13 +136,3 @@ promptInfo().then((readmeData) => {
 function writeToFile(fileName, data) {
   fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
-
-// function to initialize program
-function init() {
-  inquirer.prompt(promptInfo).then((data) => {
-    writeToFile("ProfessionalREADME.md", generateMarkdown(data));
-  });
-}
-
-// function call to initialize program
-init();
